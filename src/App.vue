@@ -25,6 +25,12 @@
                 .then((response) => {
                     store.movieSearch = response.data.results
                 })
+
+                axios.get("https://api.themoviedb.org/3/search/tv", { params: qParams })
+                .then((response) => {
+                    store.seriesSearch = response.data.results
+                })
+
             }
         }
     }
