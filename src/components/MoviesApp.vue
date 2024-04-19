@@ -1,9 +1,10 @@
 <script>
     import { store } from "../store.js";
-    
-
     export default{
         name: 'MoviesApp',
+        props: {
+            films: Object
+        },
 
         data(){
             return {
@@ -21,12 +22,11 @@
 </script>
 
 <template>
-        <div class="row d-flex justify-content-between">  
-            <h2>FILMS</h2> 
-            <div class="card  my-4 mx-3 px-2" v-for="films in store.movieSearch" style="width: 18rem;">
+            <div class="card  my-4 mx-3 px-2"  style="width: 18rem;">
                 <img :src="`https://image.tmdb.org/t/p/w342${films.poster_path}`" alt="" class="ms-sfi-mg">
                 <div class="card-body bg-danger">
-                    <h6 class="card-title">Nome: {{ films.title }}</h6>
+                    <h6 class="card-title">Nome: {{ films.title || films.name }}</h6>
+                    <small>Titolo originale {{ films.original_title || films.original_name }}</small>
                     <div v-if="flag.includes(films.original_language)">
                         <p class="card-text">Lingua originale: <img :src="getImageUrl(films.original_language)" class="ms-img"></p>
                     </div>
@@ -36,7 +36,6 @@
                     <p class="card-text">Voto: {{ Math.ceil(films.vote_average) }}</p>  
                 </div>
             </div>
-        </div> 
 </template>
 
 <style scoped lang="scss">

@@ -1,13 +1,12 @@
 <script>
     import { store } from "../store.js";
-    import SeriesApp from "./SeriesApp.vue";
+
     import MoviesApp from "./MoviesApp.vue";
     
 
     export default{
         name: 'MainApp',
         components: {
-            SeriesApp,
             MoviesApp,
         },
 
@@ -22,8 +21,13 @@
 
 <template>
     <div class="container bg-primary text-white">
-        <MoviesApp></MoviesApp>
-        <SeriesApp></SeriesApp>
+        <div class="container">
+            <h1>Film</h1>
+            <MoviesApp v-for="film in store.movieSearch" :films="film"></MoviesApp>
+            <h1>Series</h1>
+            <MoviesApp v-for="series in store.seriesSearch" :films="series"></MoviesApp>
+        </div>
+        
     </div>
 </template>
 
