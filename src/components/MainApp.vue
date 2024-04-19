@@ -22,10 +22,15 @@
 <template>
     <div class="container bg-primary text-white">
         <div class="container">
-            <h1>Film</h1>
-            <MoviesApp v-for="film in store.movieSearch" :films="film"></MoviesApp>
-            <h1>Series</h1>
-            <MoviesApp v-for="series in store.seriesSearch" :films="series"></MoviesApp>
+            <div class="row d-flex">
+
+                    <h1>Film</h1>
+                    <MoviesApp v-for="film in store.movieSearch" :films="film"></MoviesApp>
+
+                    <h1>Series</h1>
+                    <MoviesApp v-for="series in store.seriesSearch" :films="series"></MoviesApp>
+
+            </div>
         </div>
         
     </div>
