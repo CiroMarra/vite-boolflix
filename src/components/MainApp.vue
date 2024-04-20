@@ -24,20 +24,24 @@
         <div class="container">
             <div class="row d-flex">
 
-                    <h1>Film</h1>
+                    <h1 class="text-white">Film</h1>
                     <MoviesApp v-for="film in store.movieSearch" :films="film"></MoviesApp>
-
-                    <h1>Series</h1>
-                    <MoviesApp v-for="series in store.seriesSearch" :films="series"></MoviesApp>
-
             </div>
         </div>
-        
+    </div>
+
+    <div class="container bg-primary text-white">
+        <div class="container">
+            <div class="row d-flex">
+
+                <h1 class="text-white">Serie</h1>
+                    <MoviesApp v-for="series in store.seriesSearch" :films="series"></MoviesApp>                    
+            </div>
+        </div>
     </div>
 </template>
 
 <style scoped lang="scss">
-    
  .ms-img {
     width: 16px;
     height: 12px;
