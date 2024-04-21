@@ -42,5 +42,8 @@
 </template>
 
 <style lang="scss">
+body {
+    background-color: rgb(31, 30, 30);
+}
 
 </style>

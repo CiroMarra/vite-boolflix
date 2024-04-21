@@ -12,12 +12,16 @@
 </script>
 
 <template>
-    <div class="container py-3">
-        <div class="input-group">
-            <input type="text" v-model="store.movieInput" placeholder="Titolo del film...">
-            <button type="button" @click="$emit('searchFilm')">Cerca</button>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ms-border">
+            <img src="../assets/img/logo.png" alt="">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="text" v-model="store.movieInput" placeholder="Titolo del film..." aria-label="Search">
+                <button class="btn btn-outline-danger"type="button" @click="$emit('searchFilm')">Cerca</button>
+            </form>
         </div>
-    </div>
+    </nav>
+
 </template>
 
 <style scoped lang="scss">
