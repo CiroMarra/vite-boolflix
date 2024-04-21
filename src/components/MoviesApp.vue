@@ -26,8 +26,7 @@
 </script>
 
 <template>
-    <div class="card my-4 mx-3" style="width: 18rem;" @mouseover="hideImage">
-        <img :src="`https://image.tmdb.org/t/p/w342${films.poster_path}`" alt="" class="ms-sfi-mg">
+    <div class="card my-4 mx-3" style="width: 18rem;">
         <div class="card-body">
             <h6 class="card-title">Nome: {{ films.title || films.name }}</h6>
             <small>Titolo originale: {{ films.original_title || films.original_name }}</small>
@@ -39,6 +38,8 @@
             </div>   
             <p class="card-text">Voto: <MediaVote :vote="films.vote_average"></MediaVote></p> 
         </div>
+        <img :src="`https://image.tmdb.org/t/p/w342${films.poster_path}`" alt="" class="ms-sfi-mg">
+        <div class="overlay"></div>
     </div>
 </template>
 
@@ -50,23 +51,41 @@
 
 .ms-sfi-mg {
     object-fit: fill;
-    width: 288px;
+    width: 270px;
     height: 500px;
 }
-.card-body {
-    display: none;
-}
-.card:hover .ms-sfi-mg {
-    display: none;
-}
+
 .card {
-    background-color: black;
-    padding: 0px 0px 0px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 94%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1; 
+}
+
+.card-body {
+    position: absolute;
+    top: 28%; 
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    display: none;
+    z-index: 2;
 }
 
 .card:hover .card-body {
-    display: block;
-    color: white;
+    display: block; 
 }
-
 </style>
