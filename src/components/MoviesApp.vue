@@ -51,7 +51,7 @@
 
 .ms-sfi-mg {
     object-fit: fill;
-    width: 270px;
+    width: 300px;
     height: 500px;
 }
 
@@ -64,8 +64,8 @@
 .overlay {
     position: absolute;
     top: 0;
-    width: 94%;
-    height: 100%;
+    width: 300px;
+    height: 500px;
     background-color: rgba(0, 0, 0, 0.7); 
     opacity: 0; 
     transition: opacity 0.3s ease;
