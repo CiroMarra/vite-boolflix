@@ -14,7 +14,7 @@
 
 <template>
     <div class="vote">
-        <i v-for="c in this.getStars()" class="fa-solid fa-star gold"></i>
+        <i v-for="n in this.getStars()" class="fa-solid fa-star gold"></i>
         <i v-if="this.getStars() < 5" v-for="n in 5 - this.getStars()" class="fa-solid fa-star goldgrey"></i>
     </div>
 </template>
